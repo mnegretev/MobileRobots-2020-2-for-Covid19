@@ -1,5 +1,5 @@
 <launch>
-  <param name="robot_description" textfile="$(find robot_description)/robotino.urdf" />
+  <param name="robot_description" textfile="$(find robot_description)/justina_simple.urdf" />
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find config_files)/rviz/getting_started.rviz"/>
