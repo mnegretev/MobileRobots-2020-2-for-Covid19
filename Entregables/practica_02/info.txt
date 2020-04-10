@@ -1,0 +1,30 @@
+rostopic info /cmd_vel
+Type: geometry_msgs/Twist
+
+Publishers: None
+
+Subscribers: 
+ * /mobile_base (http://painkiller-legion-l:45497/)
+
+
+rostopic info /scan
+Type: sensor_msgs/LaserScan
+
+Publishers: 
+ * /laser_simulator (http://painkiller-legion-l:45475/)
+
+Subscribers: 
+ * /loc_amcl (http://painkiller-legion-l:42305/)
+ * /rviz (http://painkiller-legion-l:42043/)
+
+
+rostopic info /camera/depth_registered/points
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /rgbd_simul (http://painkiller-legion-l:34027/)
+
+Subscribers: 
+ * /rviz (http://painkiller-legion-l:42043/)
+
+
