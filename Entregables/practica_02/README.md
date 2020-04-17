@@ -3,6 +3,10 @@
 **Alumno:** Paul Sebastian Aguilar Enriquez <br>
 **Número de cuenta:** 415028130
 
+## Nota al lector
+
+Este documento fue escrito originalmente en `Markdown` y posteriormente exportado a un PDF, por lo cual, para una mejor lectura, revisar el documento original en [https://github.com/mnegretev/MobileRobots-2020-2-for-Covid19/blob/aguilar_enriquez/Entregables/practica_02/README.md](https://github.com/mnegretev/MobileRobots-2020-2-for-Covid19/blob/aguilar_enriquez/Entregables/practica_02/README.md).
+
 ## Objetivo
 
 - Uso de archivos urdf y árbol de transformaciones con el paquete tf.
@@ -167,5 +171,6 @@ Los comentarios se incluyeron en cada sección anterior.
 
 ### Copia de los archivos urdf y launch con las modificaciones hechas
 
+- [Salida del comando tf info](./info.txt)
 - [Copia de robotino_simul.launch](./robotino_simul.launch)
 - [Copia de robotino.urdf](./robotino.urdf)
