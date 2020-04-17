@@ -101,12 +101,12 @@
   </joint>
   <!-- ***************************** END ***************************** -->
   <link name="laser_link"/>
-<!--    <joint name="laser_joint" type="fixed">
+   <joint name="laser_joint" type="fixed">
     <parent link="base_link"/>
     <child link="laser_link"/>
     <origin xyz="0 0 0.3" rpy="0 0 0"/>
     <axis xyz="0 0 0" rpy="0 0 0"/>	
-  </joint>  -->
+  </joint>  
   <link name="camera_color_optical_frame"/>
   <joint name="depth_camera_joint" type="fixed">
     <parent link="base_link"/>
@@ -118,6 +118,6 @@
   <joint name="depth_camera_joint2" type="fixed">
     <parent link="base_link"/>
     <child link="camera_depth_optical_frame"/>
-    <origin xyz="-1 10 0.25" rpy="-1.8708 0 -1.5708"/>
+    <origin xyz="0 0 0.25" rpy="-1.8708 0 -1.5708"/>
   </joint>
 </robot>
