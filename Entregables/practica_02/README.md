@@ -9,7 +9,7 @@ Este documento fue escrito originalmente en `Markdown` y posteriormente exportad
 
 ## Objetivo
 
-- Uso de archivos urdf y árbol de transformaciones con el paquete tf.
+- Uso de archivos `urdf` y árbol de transformaciones con el paquete tf.
 - Realizar los ejercicios de las diapositivas 10 y 11.
 
 ## Entregables
@@ -133,7 +133,7 @@ Eliminado
 
 </div>
 
-Al eliminar ese joint la definición del robot era incorrecta por lo cual se marco un error y este no se cargo en escena.
+Al eliminar ese `joint` la definición del robot era incorrecta por lo cual se marco un error y este no se cargo en escena.
 
 <div align="center">
 
@@ -147,13 +147,13 @@ Robot sin cargar en escena
 
 </div>
 
-Lo que se hizo para corregir este error fue borrar el joint con su elemento padre. Esto permitio cargar el robot ya que su definición era correcta, pero con la ausencia de ese elemento se alteraron sus componentes y funcionamiento como podemos ver.
+Lo que se hizo para corregir este error fue borrar el `joint` con su elemento padre. Esto permitió cargar el robot ya que su definición era correcta, pero con la ausencia de ese elemento se alteraron sus componentes y funcionamiento como podemos ver.
 
 <div align="center">
 
 ![joint_sin_padre](./img/practica_02_17.png)
 
-Aqui se elimino completamente el `link` y su `joint`, solamente se pone la imagen para que se vean los numeros de linea correspondientes y confirmar la eliminación de esas lineas.
+Aquí se elimino completamente el `link` y su `joint`, solamente se pone la imagen para que se vean los números de linea correspondientes y confirmar la eliminación de esas lineas.
 
 ![joint_robot_sin_cargar](./img/practica_02_18.png)
 
@@ -169,7 +169,7 @@ Robot en escena pero sin el deep_view de la camara RGB.
 
 Los comentarios se incluyeron en cada sección anterior.
 
-### Copia de los archivos urdf y launch con las modificaciones hechas
+### Copia de los archivos `urdf` y `launch` con las modificaciones hechas
 
 - [Salida del comando tf info](./info.txt)
 - [Copia de robotino_simul.launch](./robotino_simul.launch)
