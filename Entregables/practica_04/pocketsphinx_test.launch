@@ -2,7 +2,7 @@
   <node name="speech_recog" pkg="pocketsphinx" type="asr_test.py" output="screen">
     <remap from="jsgf_audio" to="sphinx_audio" />
     <param name="gram" value="$(find pocketsphinx)/vocab/restaurant"/>
-    <param name="dict" value="$(find pocketsphinx)/vocab/restaurant.dict"/>
+    <param name="dict" value="$(find pocketsphinx)/vocab/restaurant.dic"/>
     <param name="grammar" value="restaurant"/>
     <param name="rule" value="command"/>
     <param name="lm" value=":default"/>
