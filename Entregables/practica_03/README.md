@@ -107,7 +107,7 @@ Ruta recorrida por el robot.
 
 </div>
 
-### Copia de los archivos urdf y launch con las modificaciones hechas
+### Copia de los archivos `yaml` con las modificaciones hechas
 
 - [Copia de costmap_common_params.yaml](./costmap_common_params.yaml)
 - [Copia de dwa_local_planner_params.yaml](./dwa_local_planner_params.yaml)
