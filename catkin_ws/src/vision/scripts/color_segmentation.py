@@ -10,10 +10,13 @@ def callback_rgb(msg):
     bridge = cv_bridge.CvBridge()
     img_bgr = bridge.imgmsg_to_cv2(msg, desired_encoding="bgr8")
     img_hsv = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2HSV)
-    img_bin = cv2.inRange(img_hsv, numpy.array([60,200,60]), numpy.array([80, 255, 255]))
+    #[60 - sensitivity, 100, 100]
+    #[60 + sensitivity, 255, 255]
+    sensitivity = 15
+    img_bin = cv2.inRange(img_hsv, numpy.array([60 - sensitivity,100,100]), numpy.array([60 + sensitivity, 255, 255]))
     idx = cv2.findNonZero(img_bin)
     [centroid_x, centroid_y, a, b] = cv2.mean(idx)
-    cv2.circle(img_bgr, (int(centroid_x), int(centroid_y)), 20, [0, 255, 0], thickness=3)
+    cv2.circle(img_bgr, (int(centroid_x), int(centroid_y)), 30, [255, 0, 0], thickness = 2)
     cv2.imshow("Image BGR", img_bgr)
     cv2.imshow("Image HSV", img_hsv)
     cv2.imshow("Image Binary", img_bin)
