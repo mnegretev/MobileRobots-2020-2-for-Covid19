@@ -44,9 +44,9 @@ class ASRTest(object):
         if rospy.has_param(_hmm_param):
             self.hmm = rospy.get_param(_hmm_param)
             if rospy.get_param(_hmm_param) == ":default":
-                if os.path.isdir("/usr/local/lib/python2.7/dist-packages/pocketsphinx/model/"):
+                if os.path.isdir("/usr/local/lib/python3.6/dist-packages/pocketsphinx/model/"):
                     rospy.loginfo("Loading the default acoustic model")
-                    self.hmm = "/usr/local/lib/python2.7/dist-packages/pocketsphinx/model/en-us/"
+                    self.hmm = "/usr/local/lib/python3.6/dist-packages/pocketsphinx/model/en-us/"
                     rospy.loginfo("Done loading the default acoustic model")
                 else:
                     rospy.logerr(
