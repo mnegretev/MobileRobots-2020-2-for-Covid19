@@ -1,0 +1,11 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar similar to kws example
+ */
+
+grammar proy;
+
+public <move> = ROBOT GO TO THE <place>;
+
+<place> = EXIT | ENTRY | CENTER | CORNER | NOOK;

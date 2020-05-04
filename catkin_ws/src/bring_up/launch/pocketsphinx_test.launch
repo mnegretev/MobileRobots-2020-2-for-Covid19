@@ -1,10 +1,10 @@
 <launch>
   <node name="speech_recog" pkg="pocketsphinx" type="asr_test.py" output="screen">
     <remap from="jsgf_audio" to="sphinx_audio" />
-    <param name="gram" value="$(find pocketsphinx)/vocab/restaurant"/>
-    <param name="dict" value="$(find pocketsphinx)/vocab/restaurant.dict"/>
-    <param name="grammar" value="restaurant"/>
-    <param name="rule" value="command"/>
+    <param name="gram" value="$(find pocketsphinx)/vocab/proy"/>
+    <param name="dict" value="$(find pocketsphinx)/vocab/proy.dic"/>
+    <param name="grammar" value="proy"/>
+    <param name="rule" value="move"/>
     <param name="lm" value=":default"/>
     <param name="hmm" value=":default"/>
   </node>
