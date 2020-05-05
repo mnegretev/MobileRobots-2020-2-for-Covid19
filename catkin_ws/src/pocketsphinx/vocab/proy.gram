@@ -6,6 +6,6 @@
 
 grammar proy;
 
-public <move> = ROBOT GO TO THE <place>;
+public <move> = ROBOT GO <place>;
 
-<place> = EXIT | ENTRY | CENTER | CORNER | NOOK;
+<place> = EXIT | CENTER | END | NOOK | ENTRY;
