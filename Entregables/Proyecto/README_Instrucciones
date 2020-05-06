@@ -1,0 +1,56 @@
+
+PROYECTO FINAL
+Alumno: Reyes Flores Sebastián
+Materia: Temas Selectos de Mecatrónica "Robots Móviles"
+
+
+ENLACE DEL VIDEO
+https://drive.google.com/open?id=15eKstcdvUMcDKFDDeyNBJ8Lev2szLfbb
+
+
+INSTRUCCIONES PARA CORRER EL PROGRAMA
+
+1.- Correr el nodo master con:
+	
+	$ roscore
+
+2.- Lanzar los nodos de la simulación, la navegación, el reconocimiento de voz y síntesis de voz con:
+
+	$ roslaunch bring_up proyecto.launch
+
+3.- Correr el programa principal con:
+	
+	$ rosrun proyecto proyecto.py
+
+
+INSTRUCCIONES DURANTE LA EJECUCIÓN
+
+Los comandos disponibles dada la grámatica creada son (posición del mapa al iniciar la simulación a la que se movera robot con cada comando):
+
+	-ROBOT GO ENTRY		(Esquina inferior izquierda)
+	-ROBOT GO NOOK		(Esquina superior izquierda)
+	-ROBOT GO CENTER	(Centro del mapa)
+	-ROBOT GO EXIT		(Esquina inferior derecha)
+	-ROBOT GO END		(Esquina superior derecha)
+
+
+PUBLICADORES, SUSCRIPTORES, TIPOS DE MENSAJES Y USO
+
+	SUSCRIPTORES (Tipo de mensaje) [Uso]
+
+		- /recognized (String) [Se obtiene la cadena identificada por el reconocimiento de voz]
+		- /move_base/result (MoveBaseActionResult) [Mensaje que identifica cuando el robot llega a la meta]
+
+	SUSCRIPTORES (Tipo de mensaje) [Uso]
+
+		- /move_base_simple/goal (PoseStamped) [Publica la posición de la meta indicada]
+		- /robotsound (SoundRequest) [Publica el mensaje para la sintesis de voz]
+
+
+RECOMENDACIONES Y CONSIDERACIONES
+
+Dado que el reconocimineto de voz no es del todo fiable, se recomienda la utilización de un micrófono para la ejecución de los comandos, ya que si no se cuenta con equipo de entrada de audio de buena calidad puede que se reconozcan comandos que no se han dicho durante la ejecución.
+
+Las posiciones indicadas se colocaron en puntos no tan cercanos a obstaculos a causa de que la navegación no es del todo fluida y en caso de que el robot se encuentre muy cerca de un obstaculo al llegar a una meta, tarde en salir del lugar aún cuando fueron modificados varios parámetros de la navegación o en el peor de los casos se quede atorado.
+
+En caso de que el robot se quede atorado se recomienda mover el robot manualmente con presionando el botón "2D Estimate Pose" y posteriormente fijar una posición libre de obstaculos. En un caso fatal en donde aún así la simulación ya no mueva al robot se recomienda reiniciar la simulación cerrandola y volviendo a escribir el comando "roslaunch bring_up proyecto.launch"
