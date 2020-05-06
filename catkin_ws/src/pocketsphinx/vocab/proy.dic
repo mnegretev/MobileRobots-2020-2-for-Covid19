@@ -6,5 +6,13 @@ EXIT EH K S IH T
 ENTRY EH N T R IH
 CENTER S EH N T ER
 CORNER K AO R N ER
-NOOK N UH K
 END EH N D
+NOOK N UH K
+<<<<<<< HEAD
+END EH N D
+||||||| merged common ancestors
+=======
+LIMIT L IH M IH T
+BORDER B AO R D ER
+START EH S T AA R T
+>>>>>>> 3676467ac91ef8f789a4f9f3e9cf81f98439639b
