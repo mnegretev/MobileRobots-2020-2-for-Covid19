@@ -8,10 +8,4 @@ grammar proy;
 
 public <move> = ROBOT GO <place>;
 
-<<<<<<< HEAD
 <place> = EXIT | ENTRY | CENTER | END | NOOK;
-||||||| merged common ancestors
-<place> = EXIT | ENTRY | CENTER | CORNER | NOOK;
-=======
-<place> = EXIT | CENTER | END | NOOK | ENTRY;
->>>>>>> 3676467ac91ef8f789a4f9f3e9cf81f98439639b
