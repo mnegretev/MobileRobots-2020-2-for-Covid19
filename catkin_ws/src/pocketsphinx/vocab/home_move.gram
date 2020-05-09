@@ -1,0 +1,12 @@
+#JSGF V1.0;
+
+grammar home_move;
+
+public <move> = (<room> | <stop>);
+
+<room> = GO [TO] (KITCHEN | BEDROOM | OUTSIDE | GARDEN);
+
+<stop> = ROBOT STOP;
+
+
+
