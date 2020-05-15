@@ -1,0 +1,2 @@
+Calificación: 10
+El programa funciona correctamente.
