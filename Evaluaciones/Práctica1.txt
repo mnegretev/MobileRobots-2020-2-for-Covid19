@@ -1,0 +1,5 @@
+Calificación: 8
+El programa hace que el robot describa un cuadro pero al terminar el
+primer cuadro el robot se sigue de frente indefinidamente.
+Además, puesto que el programa utiliza un 'While (true)', el programa
+se queda bloqueado y no es posible detenerlo con Ctrl-C.
