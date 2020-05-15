@@ -1,0 +1,5 @@
+Calificación: 10
+El programa funciona correctamente.
+Se recomienda no usar la función 'sleep' como temporizador, pues es bloqueante
+e impide que el programa 'esté atento' a eventos como la llegada de mensajes
+o comandos del usuario como 'Ctrl-C'.
