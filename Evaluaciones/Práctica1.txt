@@ -1,0 +1,2 @@
+Calificación: 5
+El programa marca un error en la línea 44 al momento de ejecutarlo.
