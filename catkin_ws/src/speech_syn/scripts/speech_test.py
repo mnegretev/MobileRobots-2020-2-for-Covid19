@@ -20,7 +20,7 @@ def main(text_to_say):
     loop.sleep()
     print "Sending text to say: " + text_to_say
     pub_speech.publish(msg_speech)
-   
+
 if __name__ == "__main__":
     text_to_say = "hello"
     if len(sys.argv) > 1:
