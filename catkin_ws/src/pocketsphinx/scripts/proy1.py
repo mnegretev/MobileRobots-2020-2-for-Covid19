@@ -52,7 +52,7 @@ def callback_answer(msg):
 	if(msg.status.text=="Goal reached."):
 		print("{} Objetivo alcanzado {}".format(msg.status.text,movsig))
 		loop = rospy.Rate(2)
-		msg_speech.arg = "Robot has reached its destination " + movsig
+		msg_speech.arg = "Robot has reached destination " + movsig
 		loop.sleep()
 		pub_speech.publish(msg_speech)
 	else:
