@@ -1,0 +1,8 @@
+
+#JSGF V1.0;
+
+grammar proyecto;
+
+public <move> = ROBOT MOVE <mov>;
+
+<mov> = EXIT | BACK | CENTER | RIGHT;
