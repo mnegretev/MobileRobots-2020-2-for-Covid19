@@ -15,6 +15,8 @@ def main(text_to_say):
     msg_speech.command = 1
     msg_speech.volume  = 1.0
     msg_speech.arg2    = "voice_kal_diphone"
+    #msg_speech.arg2    = "voice_en1_mbrola"
+    #msg_speech.arg2    = "voice_us1_mbrola"
     msg_speech.arg = text_to_say
 
     loop.sleep()
