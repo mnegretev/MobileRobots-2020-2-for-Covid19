@@ -1,0 +1,9 @@
+Calificación: 9
+El reporte está muy bien hecho y se incluyeron los entregables correspondientes.
+Sin embargo, las frases que se pueden reconocer no son correctas.
+De acuerdo con la gramática, frases como 'I WANT PRINGLES' o 'I WANT PASTA' no se pueden
+reconocer porque la gramática tiene las sintaxis
+I WANT [FOOD] AND [FOOD]
+es decir, para que la frase sea reconocida, se deben pedir dos cosas de comer, por ejemplo:
+I WANT PRINGLES AND PASTA.
+Es por esto que el segundo conjunto de frases no fue reconocido. 
