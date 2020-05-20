@@ -1,0 +1,9 @@
+#JSGF V1.0;
+
+grammar proy;
+
+public <command> = ROBOT (<place> | <speak>);
+
+<place> = GO TO (POINT A | POINT B);
+
+<speak> = SAY YES | SAY NO;

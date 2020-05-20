@@ -34,7 +34,7 @@ def callback_rgb(msg):
         
     good_points = []
     for m,n in matches:
-        if m.distance < 0.7*n.distance: #Two best matches are similar enough
+        if m.distance < 0.4*n.distance: #Two best matches are similar enough
             good_points.append([kp_query[m.queryIdx].pt[0], kp_query[m.queryIdx].pt[1]])
             
     if len(good_points) > 10:
