@@ -1,0 +1,13 @@
+#JSGF V1.0;
+
+/**
+ * Grammar for proyect objectives
+ */
+
+grammar proyect;
+
+public <move> = [ROBOT] (<action> | GO TO <place>);
+
+<place> = KITCHEN | ENTRANCE | ROOM | SPACE;
+
+<action> = CONTINUE | STOP | RETURN;
