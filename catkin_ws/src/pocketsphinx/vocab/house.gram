@@ -1,0 +1,15 @@
+#JSGF V1.0;
+
+grammar house;
+
+public <command> = [<robot>] (<move> | <state>);
+
+<robot> = ROBOT;
+
+<move> = (MOVE <direction> | GO TO [THE] <place>);
+
+<state> = START | STOP;
+
+<direction> = FORWARD | BACK | LEFT | RIGHT;
+
+<place> = KITCHEN | BEDROOM | YARD;
