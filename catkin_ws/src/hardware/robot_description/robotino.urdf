@@ -33,7 +33,7 @@
     <parent link="base_link"/>
     <child link="wheel0_link"/>
     <origin xyz="-0.0001 0.1825 0.059154" rpy="0 0 0"/>
-    <axis xyz="0 1 0" rpy="0 0 0"/>	
+    <axis xyz="0 1 0" rpy="0 0 0"/> 
   </joint>
 <!-- ***************************** Wheel 1 - Mesh ***************************** --> 
   <link name="wheel1_link">
@@ -54,7 +54,7 @@
     <parent link="base_link"/>
     <child link="wheel1_link"/>
     <origin xyz="-0.157067 -0.090625 0.059154" rpy="0 0 2.094395102393195"/>
-    <axis xyz="0 1 0" rpy="0 0 0"/>	
+    <axis xyz="0 1 0" rpy="0 0 0"/> 
   </joint>
 <!-- ***************************** Wheel 2 - Mesh ***************************** -->  
   <link name="wheel2_link">
@@ -75,7 +75,7 @@
     <parent link="base_link"/>
     <child link="wheel2_link"/>
     <origin xyz="0.156867 -0.090625 0.059154" rpy="0 0 -2.094395102393195"/>
-    <axis xyz="0 1 0" rpy="0 0 0"/>	
+    <axis xyz="0 1 0" rpy="0 0 0"/> 
   </joint>  
 <!-- ***************************** Platform ***************************** -->  
 <!-- Un/Comment from here to END to add/remove the platform -->
@@ -97,16 +97,16 @@
     <parent link="base_link"/>
     <child link="platform_link"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
-    <axis xyz="0 0 0" rpy="0 0 0"/>	
+    <axis xyz="0 0 0" rpy="0 0 0"/> 
   </joint>
   <!-- ***************************** END ***************************** -->
   <link name="laser_link"/>
-   <joint name="laser_joint" type="fixed">
+  <joint name="laser_joint" type="fixed">
     <parent link="base_link"/>
     <child link="laser_link"/>
     <origin xyz="0 0 0.3" rpy="0 0 0"/>
-    <axis xyz="0 0 0" rpy="0 0 0"/>	
-  </joint>  
+    <axis xyz="0 0 0" rpy="0 0 0"/> 
+  </joint>
   <link name="camera_color_optical_frame"/>
   <joint name="depth_camera_joint" type="fixed">
     <parent link="base_link"/>

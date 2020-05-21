@@ -1,0 +1,11 @@
+#JSGF V1.0;
+
+grammar proy;
+public <command> = [<robot>] (<move> | <speak> | <state>);
+<robot> = ROBOT;
+<move> = (MOVE <direction> [<speed>] | GO TO [THE] <place>);
+<direction> = FORWARD | LEFT | RIGHT;
+<speed> = FULL SPEED;
+<place> = POINT A | POINT C;
+<speak> = SAY HELLO | SAY POTATO;
+<state> = START | STOP | ROTATE;
