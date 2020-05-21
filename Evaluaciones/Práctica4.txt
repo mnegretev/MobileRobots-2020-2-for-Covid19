@@ -1,0 +1,5 @@
+Calificación: 8
+Se incluyen capturas de pantalla de las frases reconocidad y una descripción muy breve de los
+parámetros, pero no se incluyen ejemplos de frases que se pueden reconocer con la gramática.
+Los ejemplos de frases a partir de la gramática se pidieron para ver que el estudiante
+efectivamente entienda la estructura de la gramática.
