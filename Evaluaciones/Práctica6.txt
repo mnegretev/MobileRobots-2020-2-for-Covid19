@@ -1,0 +1,5 @@
+Calificación: 10
+Se realizaron correctamente todos los ejercicios y se agregaron todos los
+entregables.
+Los comentarios son muy pobres y no describen el procedimiento para obtener los valores. 
+
