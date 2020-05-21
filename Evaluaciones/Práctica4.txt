@@ -1,0 +1,7 @@
+Calificación: 8
+Los ejemplos de frases que se pueden reconocer no son correctos.
+Se menciona que se pueden reconocer dos 'ramas' cuando en realidad son
+tres: frases que empiezan con 'Justina...', frases para pedir un combo
+y frases para pedir una bebida. Y en las frases para pedir un combo,
+la palabra 'and' no es opcional. De acuerdo con la gramática, las
+frases de esta regla deben llevar la palabra 'and' e incluir dos comidas. 

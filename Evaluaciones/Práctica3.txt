@@ -1,0 +1,5 @@
+Calificación: 9
+Los comentarios sobre los parámetros no describen el comportamiento de estos.
+Faltó revisar la documentación del paquete move_base para entender
+mejor los parámetros y hacer una mejor descripción de su funcionamiento.
+

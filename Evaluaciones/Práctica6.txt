@@ -1,0 +1,6 @@
+Calificación: 10
+Se realizó correctamente la segmentación por color.
+En los comentarios se menciona que se hicieron varias pruebas con
+BGR con páginas en línea y que la segmentación mejoró hasta que se
+utilizaron valores en HSV. Esto no era necesario dado que en las
+diapositivas se indica que se usen valores HSV.
