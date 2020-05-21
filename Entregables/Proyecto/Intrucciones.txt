@@ -1,0 +1,55 @@
+        ** P R O Y E C T O      F I N A L **
+
+Materia: Temas Selectos de Mecatrónica  (Robots Móviles)
+Alumno: Gómez Castro Joel Francisco
+Profesor: Dr. Marco Antonio Negrete Villanueva
+
+PARA LA EJECUCIÓN DEL PROGRAMA
+
+Primero en una pestaña de la terminal, ejecutar el nodo master:
+    roscore
+Luego en otra pestaña de la terminal, ejecutar el nodo launch (donde tiene RVIZ, robot, movimientos, ubicación, reconocimiento de voz y síntesis de voz):
+    roslaunch bring_up proyecto.launch
+Y después en otra pestaña, ejecutar el programa:
+    rosrun proyecto_final ejecutable.py
+
+PARA MOVER EL ROBOT
+
+Estas son los comandos de reconocimiento de voz:
+  * ROBOT GO KITCHEN
+  * ROBOT GO LOUNGE
+  * ROBOT GO BEDROOM
+  * ROBOT GO STUDIO
+  * ROBOT GO BATHROOM
+  * ROBOT GO EXIT
+  * ROBOT STOP
+
+INFORMACIÓN DEL PROGRAMA
+
+Publicadores:
+  * pub_goal= rospy.Publisher("move_base_simple/goal", PoseStamped, queue_size=10)
+    Publica la posición de la meta indicada
+
+  * pub_speech = rospy.Publisher("robotsound", SoundRequest, queue_size=10)
+    Publica el mensaje por la síntesis de voz
+
+  * pub_cancel = rospy.Publisher("/move_base/cancel", GoalID, queue_size=10)
+    Se encarga de detener el avance del robot, y posteriormente se lanza un mensaje
+
+Suscriptores:
+  * rospy.Subscriber("/recognized",String, callback_function)
+    Se obtiene el mensaje convertido en cadena, por reconocimiento de voz
+
+  * rospy.Subscriber("/move_base/result" , MoveBaseActionResult , callback)
+    Mensaje que indica cuando el robot llega a la meta
+
+OBSERVACIONES
+  *Es necesario el uso de audifonos con microfono, y modificar su sensibilidad, de tal manera que sea lo razonablemente baja, esto porque si hay mmucha sensibilidad en el microfono, puede haber instrucciones erroneas.
+  *En caso que se llegue a atorar el robot o no haya reconocido bien la instrucción del destino, decir el comando ROBOT STOP.
+  *Si se atora el robot y en la consola (en la pestaña del nodo launch), tiene un aviso de tipo ''fatal'' oprimir ctrl+C en esa y en la pestaña de la ejecución del programa; y de nuevo reiniciar la ejecución.
+
+VIDEO
+
+Por el siguiente enlace:
+
+    https://drive.google.com/file/d/13aIb7UdoYWucgsi01dkVZwWdk1l5EP94/view?usp=sharing

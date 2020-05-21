@@ -1,0 +1,9 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar similar to kws example
+ */
+
+grammar instr;
+
+public <move> = ROBOT [GO] (EXIT | KITCHEN | LOUNGE | STUDIO | BEDROOM | BATHROOM | STOP);
