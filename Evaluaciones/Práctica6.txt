@@ -1,0 +1,7 @@
+Calificación: 8
+Se agregaron capturas de pantalla del resultado obtenido pero no se explica cómo se llegó a
+ese resultado. En los comentarios se menciona que se recurrió al tanteo, lo cual es válido,
+pero no se menciona cómo se obtuvo la conjetura inicial, qué pasos se siguieron o qué
+herramientas se usaron. De hecho, el intervalo utilizado para el canal 'H' es muy amplio,
+es decir, en él podrían entrar colores diferentes al verde, lo cual se observa en el hecho
+de que se incluye en la segmentación una mancha amarilla. 
