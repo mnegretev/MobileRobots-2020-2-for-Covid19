@@ -1,0 +1,8 @@
+Calificación: 10
+El reporte incluye todas las actividades solicitadas.
+En los comentarios se menciona al parámetro 'inflation-radius'
+como un parámetro de tolerancia a los obstáculos.
+Esto no es correcto. El 'inflation-radius' sirve para aumentar el tamaño
+de los obstáculos y de hecho dificulta la navegación en lugar estrechos
+pero también hace que el robot navegue más alejado de los obstáculos. 
+
