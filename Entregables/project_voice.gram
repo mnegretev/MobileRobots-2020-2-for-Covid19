@@ -1,0 +1,12 @@
+#JSGF V1.0;
+
+grammar project_voice;
+
+public <action> = (<room> | <stop>);
+
+<room> = ROBOT GO TO (DOOR | WINDOW | GARAGE | BATHROOM);
+
+<stop> = ROBOT STOP;
+
+
+
