@@ -21,7 +21,7 @@ from sound_play.msg import SoundRequest
 class SaySomethingRobot(object):
 
     def __init__(self, text_to_say):
-        rospy.init_node("speech_syn")
+        # rospy.init_node("speech_syn")
         pub_speech = rospy.Publisher("robotsound", SoundRequest, queue_size=10)
         loop = rospy.Rate(2)
 
@@ -270,8 +270,9 @@ class ASRTest(object):
                     GetCommand(recognized)
                 else :
                     # Indiquemos que no sabemos que dice el usuario
-                    rospy.loginfo('OUTPUT: No te entiendo que dices')
-                    SaySomethingRobot('No te entiendo que dices')
+                    notRecognized = "SORRY BUT I DON'T UNDERSTAND YOU"
+                    rospy.loginfo('OUTPUT: \"' + notRecognized + '\"')
+                    SaySomethingRobot(notRecognized)
                 self.decoder.start_utt()
 
     @staticmethod
