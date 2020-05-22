@@ -1,0 +1,7 @@
+Calificación: 10
+Se realizaron correctamente todos los ejercicios.
+Los comentarios describen bien lo que se realizó.
+Con respecto al último comentario, puedes tomar el curso
+el siguiente semestre, donde vemos, entre otras cosas, cómo
+planear rutas, localizar al robot, hacer mapas y
+leyes de control. 
