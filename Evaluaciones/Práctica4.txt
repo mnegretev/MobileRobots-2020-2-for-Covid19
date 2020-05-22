@@ -1,0 +1,3 @@
+Calificación: 9
+No se incluyeron ejemplos de las frases que el robot podría
+reconocer de acuerdo con la gramática 'restaurant'.
