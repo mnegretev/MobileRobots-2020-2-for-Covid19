@@ -1,13 +1,9 @@
 #!/usr/bin/python
 
 from time import sleep
-
 import pyaudio
-
 import rospy
-
 from std_msgs.msg import String
-
 
 class AudioMessage(object):
     """Class to publish audio to topic"""
