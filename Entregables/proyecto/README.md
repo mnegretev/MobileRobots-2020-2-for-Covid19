@@ -57,10 +57,10 @@ roslaunch bring_up proyecto.launch
 
 Se definieron los siguientes comandos:
 
-- Robotino move [to room] |one|two|three|four
-- Robotino move outside
-- Robotino stop
-- Robotino dance
+- Robot move [to room] |one|two|three|four
+- Robot move outside
+- Robot stop
+- Robot dance
 
 En el archivo `proyecto.launch` se asigno la gramática y el diccionario a
 utilizar:
@@ -289,4 +289,4 @@ class MoveToPoint(object):
 
 ## Enlace al video
 
-- [Hola](www.hola.com)
+- [Video del proyecto](./video/video_proyecto.flv)
