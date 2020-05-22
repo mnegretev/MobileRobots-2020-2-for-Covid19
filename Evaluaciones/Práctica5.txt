@@ -1,0 +1,4 @@
+Calificación: 10
+Se hicieron las modificaciones correspondientes y se incluyen los archivos de audio.
+Se recomienda grabar el audio directamente de la computadora y no con un
+micrófono externo para evitar que haya tanto ruido ambiental. 
