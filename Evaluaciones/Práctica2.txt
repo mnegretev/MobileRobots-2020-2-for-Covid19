@@ -1,0 +1,4 @@
+Calificación: 9
+No se realizó correctamente el cambio de modelo de robot, pues al cambiar
+de Robotino a Justina, aparece un modelo en blanco, lo cual indica que se
+realizó una modificación que produjo un error. 
