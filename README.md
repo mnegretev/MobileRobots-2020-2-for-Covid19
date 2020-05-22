@@ -11,34 +11,47 @@ Material para el curso alternativo sobre Construcción de Robots Móviles en tie
 
 Nota: se asume que ya se tiene instalado Ubuntu y ROS.
 
-* $ git clone https://github.com/mnegretev/MobileRobots-2020-2-for-Covid19
-* $ cd MobileRobots-2020-2-for-Covid19
+```bash
+$ git clone https://github.com/mnegretev/MobileRobots-2020-2-for-Covid19
+$ cd MobileRobots-2020-2-for-Covid19
+```
 
 Para ROS Melodic:
-* $ ./SetupMelodic.sh
-Y para ROS Kinetic
-* $ ./SetupKinetic.sh
+```bash
+$ ./SetupMelodic.sh
+```
 
-* $ cd catkin_ws
-* $ catkin_make -j2 -l2
-* $ sudo usermod -a -G audio <user_name>
+Para ROS Kinetic:
+```bash
+$ ./SetupKinetic.sh
+```
 
-La última instrucción agrega al usuario actual al grupo 'audio', por lo que es necesario hacer logout y login nuevamente. Para probar la instalación:
+```bash
+$ cd catkin_ws
+$ catkin_make -j2 -l2
+$ sudo usermod -a -G audio <user_name>
+```
 
-* $ cd 
-* $ source MobileRobots-2020-2-for-Covid19/catkin_ws/devel/setup.bash
-* $ roslaunch bring_up robotino_simul.launch
+La última instrucción agrega al usuario actual al grupo `audio`, por lo que es necesario hacer logout y login nuevamente. Para probar la instalación:
+
+```bash
+$ cd
+$ source MobileRobots-2020-2-for-Covid19/catkin_ws/devel/setup.bash
+$ roslaunch bring_up robotino_simul.launch
+```
 
 Si todo se instaló y compiló correctamente, se debería ver un rviz como el siguiente:
 
-![RepoExample](https://github.com/mnegretev/MobileRobots-2020-2-for-Covid19/blob/master/Slides/Figures/RepoExample.png)
+![RepoExample](./Slides/Figures/RepoExample.png)
 
 Para compilar las diapositivas del curso (se asume que se tiene instalado texlive):
 
-* $ cd ~/EIR-2020-AtHomeEducation/Slides
-* $ pdflatex EIR_2020_AtHomeEducation.tex
+```bash
+$ cd ~/EIR-2020-AtHomeEducation/Slides
+$ pdflatex EIR_2020_AtHomeEducation.tex
+```
 
-En la carpeta /Slides hay una versión compilada.
+En la carpeta `/Slides` hay una versión compilada.
 
 ## Contacto
 Dr. Marco Negrete<br>

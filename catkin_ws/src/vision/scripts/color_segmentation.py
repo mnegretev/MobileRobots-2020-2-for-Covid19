@@ -18,7 +18,7 @@ def callback_rgb(msg):
     cv2.imshow("Image HSV", img_hsv)
     cv2.imshow("Image Binary", img_bin)
     cv2.waitKey(1)
-    
+
 def main():
     print "INITIALIZING COLOR SEGMENTATION NODE..."
     rospy.init_node("color_segmentation")

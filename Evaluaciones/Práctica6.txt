@@ -1,0 +1,5 @@
+Calificación: 10
+Se siguieron correctamente los pasos para realizar una segmentación por color.
+La regla de tres que se utilizó para S y V no era necesaria puesto que GIMP ya muestra
+los valores en un intervalo de 0-255, mismo intervalo que utiliza OpenCV.
+El único ajuste necesario era el de el canal H. 

@@ -4,9 +4,137 @@ import os
 
 import rospy
 
+# Move
+# Brings in the SimpleActionClient
+import actionlib
+# Brings in the .action file and messages used by the move base action
+from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
+
+# Voice recognition
 from std_msgs.msg import String
 from pocketsphinx.pocketsphinx import *
 from sphinxbase.sphinxbase import *
+
+# Voice synthesis
+from sound_play.msg import SoundRequest
+
+class SaySomethingRobot(object):
+
+    def __init__(self, text_to_say):
+        # rospy.init_node("speech_syn")
+        pub_speech = rospy.Publisher("robotsound", SoundRequest, queue_size=10)
+        loop = rospy.Rate(2)
+
+        msg_speech = SoundRequest()
+        # Indicamos que se va a reproducir un texto una sola vez
+        msg_speech.sound   = -3
+        msg_speech.command = 1
+        msg_speech.volume  = 1.0
+        # Indicamos la voz
+        msg_speech.arg2    = "voice_kal_diphone"
+        #self.msg_speech.arg2    = "voice_en1_mbrola"
+        #self.msg_speech.arg2    = "voice_us1_mbrola"
+
+        # Indicamos el mensaje
+        msg_speech.arg = text_to_say
+
+        loop.sleep()
+        print "ROBOT SAY: " + text_to_say
+        pub_speech.publish(msg_speech)
+
+class MoveToPoint(object):
+
+    def __init__(self, point):
+        # Creamos el cliente
+        client = actionlib.SimpleActionClient('move_base', MoveBaseAction)
+        client.wait_for_server()
+        imDone = ""
+
+        # Definimos los puntos
+        goal = MoveBaseGoal()
+        goal.target_pose.header.frame_id = "map"
+        goal.target_pose.header.stamp = rospy.Time.now()
+
+        if point == 0:  # OUTSIDE
+            goal.target_pose.pose.position.x = 0.0
+            goal.target_pose.pose.position.y = 0.0
+            goal.target_pose.pose.orientation.w = 1.0
+            imDone = "I'M OUTSIDE"
+        elif point == 1: # Room 1
+            goal.target_pose.pose.position.x = 1.5
+            goal.target_pose.pose.position.y = 2.5
+            goal.target_pose.pose.orientation.w = 1.0
+            imDone = "I'M IN THE ROOM ONE"
+        elif point == 2: # Room 2
+            goal.target_pose.pose.position.x = 4.0
+            goal.target_pose.pose.position.y = 3.5
+            goal.target_pose.pose.orientation.w = 1.0
+            imDone = "I'M IN THE ROOM TWO"
+        elif point == 3: # Room 3
+            goal.target_pose.pose.position.x = 7.0
+            goal.target_pose.pose.position.y = 2.5
+            goal.target_pose.pose.orientation.w = 1.0
+            imDone = "I'M IN THE ROOM THREE"
+        elif point == 4: # Room 4
+            goal.target_pose.pose.position.x = 3.0
+            goal.target_pose.pose.position.y = 1.0
+            goal.target_pose.pose.orientation.w = 1.0
+            imDone = "I'M IN THE ROOM FOUR"
+
+        # Nos movemos
+        client.send_goal(goal)
+
+        wait = client.wait_for_result()
+
+        if not wait:
+            # Indicamos que algo ha pasado
+            SaySomethingRobot("HELP ME PLEASE, I'M STUCK HERE")
+            rospy.logerr("ACTION SERVER IS NOT AVAILABLE")
+            rospy.signal_shutdown("ACTION SERVER IS NOT AVAILABLE")
+        else:
+            # Indicamos que hemos llegado al punto
+            rospy.loginfo(imDone)
+            SaySomethingRobot(imDone)
+
+class GetCommand(object):
+    def __init__(self, command):
+
+        #Mostramos el texto recibido
+        print "DETECTED COMMAND: " + command
+
+        # Verificamos si es un movimiento de robot
+        if "MOVE" in command:
+            # Determinamos a donde movernos
+            if "ONE" in command:
+                # Hacemos que el robot indique se va a mover
+                SaySomethingRobot("MOVING TO ROOM ONE")
+                # Nos movemos a un punto
+                MoveToPoint(1)
+            elif "TWO" in command:
+                # Hacemos que el robot indique se va a mover
+                SaySomethingRobot("MOVING TO ROOM TWO")
+                # Nos movemos a un punto
+                MoveToPoint(2)
+            elif "THREE" in command:
+                # Hacemos que el robot indique se va a mover
+                SaySomethingRobot("MOVING TO ROOM THREE")
+                # Nos movemos a un punto
+                MoveToPoint(3)
+            elif "FOUR" in command:
+                # Hacemos que el robot indique se va a mover
+                SaySomethingRobot("MOVING TO ROOM FOUR")
+                # Nos movemos a un punto
+                MoveToPoint(4)
+            elif "OUTSIDE" in command:
+                SaySomethingRobot("MOVING OUTSIDE")
+                # Nos movemos a un punto
+                MoveToPoint(0)
+        # Verificamos otras instruccions
+        elif "STOP" in command:
+            SaySomethingRobot("NO, NOTHING CAN'T STOP ME")
+        elif "DANCE" in command:
+            SaySomethingRobot("SORRY BUT I DON'T KNOW HOW TO DANCE YET")
+
 
 class ASRTest(object):
     """Class to add jsgf grammar functionality."""
@@ -138,6 +266,13 @@ class ASRTest(object):
                     recognized = self.decoder.hyp().hypstr
                     rospy.loginfo('OUTPUT: \"' + recognized + '\"')
                     self.pub_.publish(recognized)
+                    # Vamos a reconocer el comando
+                    GetCommand(recognized)
+                else :
+                    # Indiquemos que no sabemos que dice el usuario
+                    notRecognized = "SORRY BUT I DON'T UNDERSTAND YOU"
+                    rospy.loginfo('OUTPUT: \"' + notRecognized + '\"')
+                    SaySomethingRobot(notRecognized)
                 self.decoder.start_utt()
 
     @staticmethod

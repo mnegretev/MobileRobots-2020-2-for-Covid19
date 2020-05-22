@@ -1,0 +1,10 @@
+#JSGF V1.0;
+
+grammar proyecto;
+
+public <command> = ROBOT (<move> | <move_out> | <dance> | <stop>);
+
+<move> = MOVE TO ROOM (ONE | TWO | THREE | FOUR);
+<move_out> = MOVE OUTSIDE;
+<dance> = DANCE;
+<stop> = STOP;
