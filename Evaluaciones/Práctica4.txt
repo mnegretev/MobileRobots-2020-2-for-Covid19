@@ -1,0 +1,3 @@
+Calificación: 8
+No hay capturas con ejemplos de frases reconocidas y no hay ejemplos
+de frases que se pudieran reconocer con la gramática 'restaurant'.
