@@ -1,0 +1,4 @@
+Calificación: 9
+No hay comentarios sobre qué sucede con el mapa y con el cálculo de las rutas
+cuando se cambian los parámetros 'inflation radius' y 'scaling factor'.
+El comentario que se agrega es muy vago. 
