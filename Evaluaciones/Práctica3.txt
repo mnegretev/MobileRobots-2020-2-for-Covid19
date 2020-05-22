@@ -1,0 +1,7 @@
+Calificación: 9
+Se realizaron correctamente todas las actividades y se
+agregan capturas de pantalla donde se observan los diferentes cambios,
+sin embargo, en los comentarios no se describe nada acerca de
+los cambios, no hay comentarios sobre qué sucede cuando se cambia
+el 'inflation_radius' o el 'scaling_factor', qué sucede con el mapa de
+obstáculos, qué sucede con las rutas, etc. 
