@@ -1,0 +1,4 @@
+Calificación: 9
+Faltaron capturas de pantalla donde se muestre lo que sucede cuando
+se cambia la etiqueta 'origin'.
+El reporte, en general, está bien hecho. 
