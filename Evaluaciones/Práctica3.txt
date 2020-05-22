@@ -1,0 +1,8 @@
+Calificación: 9
+Los comentarios sobre los parámetros 'scaling_factor' e 'inflation_radius' no
+aportan nada sobre el significado de estos. Se recomienda ampliamente consultar
+la documentación del paquete move_base para poder dar una mejor explicación.
+El reporte en general es muy poco profesional. Las imágenes son poco claras
+e incluyen partes que no son significativas, como el arbol de archivos
+del IDE utilizado, o partes vacías de la pantalla.
+
