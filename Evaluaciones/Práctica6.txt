@@ -1,0 +1,3 @@
+Calificación: 8
+Los comentarios no aportan nada de inforamación sobre el desarrollo de la práctica
+o la forma en que se obtuvieron los diferentes parámetros. 
