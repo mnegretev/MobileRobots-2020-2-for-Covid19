@@ -1,0 +1,10 @@
+Calvillo Felipe Miguel
+Robots móviles 2020-2
+Proyecto Final
+Primero se debe correr el nodo principal con roscore
+Después roslaunch bring_up project_final.launch
+Y por último rosrun bring_up project_final.py
+link del vídeo:
+https://drive.google.com/open?id=18m8n8qTYzJwzQkHY4QxOd8P6gqm-4-8
+o
+https://drive.google.com/file/d/18m8n8qTYzJwzQkHY4QxOd8P6gqm-4-81/view?usp=drivesdk
