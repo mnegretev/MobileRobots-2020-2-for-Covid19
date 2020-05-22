@@ -1,3 +1,4 @@
+# LA CARPETA 'ENTREGABLES' ES PARA PONER DENTRO DE ELLA LOS ENTREGABLES. GRACIAS.
 # MobileRobots-2020-2-for-Covid19
 
 Material para el curso alternativo sobre Construcción de Robots Móviles en tiempos del Covid19.
