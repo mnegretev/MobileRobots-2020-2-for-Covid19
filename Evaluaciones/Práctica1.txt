@@ -1,0 +1,2 @@
+Calificación: 5
+El programa no se puede ejecutar debido a un error en la línea 45.
