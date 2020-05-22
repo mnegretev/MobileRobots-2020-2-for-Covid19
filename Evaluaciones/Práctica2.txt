@@ -1,0 +1,8 @@
+Calificación: 10
+Se realizaron correctamente todos los ejercicios y se agregaron todos los entregables.
+Muy buena explicación sobre los parámetros de la etiqueta 'origin'.
+Y con respecto al último comentario, la imagen sí está conectada con el robot, solo
+que la imagen que se observa a la izquierda es la proyección sobre el plano perpendicular
+a la línea de vista de la cámara (perpendicular la eje Z de la cámara), es por eso
+que esa imagen nunca cambia independientemente de la posición u orientación del la
+cámara o del robot. Pero sí es parte de la nube de puntos y sí está conectada con el robot. 
