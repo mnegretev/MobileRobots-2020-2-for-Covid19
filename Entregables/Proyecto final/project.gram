@@ -1,0 +1,13 @@
+#JSGF V1.0;
+
+grammar project;
+
+public <instruction> = [<robot>] (<move> | <speak>);
+
+<robot> = ROBOT;
+
+<move> = (GO TO [THE] <place>);
+
+<place> = KITCHEN | YARD;
+
+<speak> = SAY HELLO | SAY GOODBYE | TELL A JOKE | SCREAM | LAUGH;
