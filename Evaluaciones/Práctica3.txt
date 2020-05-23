@@ -1,0 +1,3 @@
+Calificación: 9
+En los comentarios no se menciona cómo los parámetros 'inflation radius' y
+'scaling factor' afectan la navegación del robot. 
