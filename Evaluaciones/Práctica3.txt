@@ -1,0 +1,5 @@
+Calificación: 9
+Los comentarios acerca de los parámetros 'inflation radius' y 'scaling factor'
+solo hacen referencia al color del mapa pero no dicen nada sobre cómo sus valores
+afectan la navegación del robot. 
+
