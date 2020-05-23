@@ -1,0 +1,5 @@
+Calificación: 10
+Se realizaron los ejercicios correctamente y se agregaron todos los entregables.
+Es deseable que los comentarios describan más ampliamente el método
+utilizado para determinar el rango de color. 
+
