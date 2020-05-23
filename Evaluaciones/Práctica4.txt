@@ -1,0 +1,4 @@
+Calificación: 10
+Se ejecutaron correctamente todos los ejercicios y se agregaron todos los entregables.
+Los ejemplos de frases que se pueden reconocer son correctos.
+Muy buen reporte.
