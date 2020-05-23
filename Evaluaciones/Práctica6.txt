@@ -1,0 +1,3 @@
+Calificación: 10
+Se ejecutaron correctamente todos los ejercicios y se agregaron todos los entregables.
+Muy buena idea utilizar el código de ejemplo de los tutoriales de python.
