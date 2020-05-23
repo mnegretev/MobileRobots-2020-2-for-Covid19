@@ -1,0 +1,6 @@
+Calificación: 8
+Los comentarios sobre la función de los parámetros 'inflation radius' y 'scaling factor'
+solo hacen referencia al cambio en el color de los obstáculos.
+El error que aparece en la terminal no tiene nada que ver con el cálculo de rutas. 
+Se recomienda leer la documentación del paquete move_base (como se indica en las
+diapositivas) para poder hacer comentarios relevantes.
