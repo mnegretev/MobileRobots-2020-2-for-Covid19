@@ -2,11 +2,135 @@
 
 import os
 
+import sys
+
 import rospy
+import rospy
+import tf
+
+
+import actionlib
+
+
 
 from std_msgs.msg import String
 from pocketsphinx.pocketsphinx import *
 from sphinxbase.sphinxbase import *
+from sound_play.msg import SoundRequest
+from std_msgs.msg import Float32MultiArray 
+import time 
+NAME = "gutierrez_martinez"
+#---
+
+class SaySomethingRobot(object):
+
+    def __init__(self, text_to_say):
+        # rospy.init_node("speech_syn")
+        pub_speech = rospy.Publisher("robotsound", SoundRequest, queue_size=10)
+        loop = rospy.Rate(2)
+
+        msg_speech = SoundRequest()
+        # Indicamos que se va a reproducir un texto una sola vez
+        msg_speech.sound   = -3
+        msg_speech.command = 1
+        msg_speech.volume  = 1.0
+        # Indicamos la voz
+        msg_speech.arg2    = "voice_kal_diphone"
+        #self.msg_speech.arg2    = "voice_en1_mbrola"
+        #self.msg_speech.arg2    = "voice_us1_mbrola"
+
+        # Indicamos el mensaje
+        msg_speech.arg = text_to_say
+
+        loop.sleep()
+        print "ROBOT: " + text_to_say
+        pub_speech.publish(msg_speech)
+#---
+
+def get_robot_pose(listener):
+    try:
+        (trans, rot) = listener.lookupTransform('odom', 'base_link', rospy.Time(0))
+        robot_x = trans[0]
+        robot_y = trans[1]
+        robot_a = 2*math.atan2(rot[2], rot[3])
+        if robot_a > math.pi:
+            robot_a -= 2*math.pi
+        return robot_x, robot_y, robot_a
+    except:
+        pass
+    return None
+
+class Mover(object):
+    def __init__(self, point):
+      print "PROYECTO FINAL - " + NAME
+      rospy.init_node("")
+      pub_speeds = rospy.Publisher("/rotombot/hardware/motor_speeds", Float32MultiArray, queue_size=10)
+      loop = rospy.Rate(20)
+      listener = tf.TransformListener()
+      client.wait_for_server()
+      imDone = ""
+      while not rospy.is_shutdown():
+      
+      		if point == 0:  
+                      time.sleep(1)
+                      msg= Float32MultiArray()
+           	      msg.data=[0.6, 0.6]
+            	      pub_speeds.publish(msg)
+            	      time.sleep(3)
+            	      imDone = "Advance"
+            	      loop.sleep()
+      		if point == 1: 
+        #vuelta a la derecha
+	    	      msg.data=[0.8, -0.8]
+            	      pub_speeds.publish(msg)
+	              time.sleep(.50)
+                      imDone = "turn right"
+                      loop.sleep()
+      		if point == 2: 
+        #vuelta a la izquierda
+		     msg.data=[-0.8, 0.8]
+       		     pub_speeds.publish(msg)
+		     time.sleep(.50)
+         	     imDone = "turn left"
+         	     loop.sleep()
+       		if point == 3:
+        #detener
+	             msg.data=[0.0, 0.0]
+        	     pub_speeds.publish(msg)
+		     time.sleep(.5)
+         	     imDone = "Advance"
+         	     loop.sleep()
+        
+        
+
+#---
+class GetCommand(object):
+    def __init__(self, command):
+
+     
+        print "COMANDO: " + command
+
+      
+        if "ADVANCED" in command:
+                 SaySomethingRobot("ADVANCED")
+                 Mover(0)
+           
+        if "RIGHT" in command:
+               
+                SaySomethingRobot("TURN RIGHT")
+       
+                MoverPoint(1)
+        if "LEFT" in command:
+           
+                SaySomethingRobot("TURN LEFT")
+             
+                Mover(2)
+                
+        if "STOP" in command:
+                SaySomethingRobot("STOP PLEASE")
+                Mover(3)
+          
+
 
 class ASRTest(object):
     """Class to add jsgf grammar functionality."""
@@ -138,7 +262,9 @@ class ASRTest(object):
                     recognized = self.decoder.hyp().hypstr
                     rospy.loginfo('OUTPUT: \"' + recognized + '\"')
                     self.pub_.publish(recognized)
+                    GetCommand(recognized)
                 self.decoder.start_utt()
+                 
 
     @staticmethod
     def shutdown():
