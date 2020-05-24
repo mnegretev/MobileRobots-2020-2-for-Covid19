@@ -1,0 +1,15 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar similar to kws example
+ */
+
+grammar robot;
+
+public <move> = ROBOT GO TO THE ENTRY;
+
+public <move2> = ROBOT GO TO THE <place>;
+
+<place> = ENTRY | BEDROOM | LIVINGROOM | KITCHEN | GARDEN;
+
+

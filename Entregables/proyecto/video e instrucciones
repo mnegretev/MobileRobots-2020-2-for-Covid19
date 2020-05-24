@@ -1,0 +1,28 @@
+
+1. iniciar nodo maestro
+
+2. iniciar roslaunch bring up robotino simul.launch con el mapa TMR_2019.yaml 
+
+3. iniciar roslaunch bring up navigation move base.launch
+
+4. iniciar roslaunch bring up pocketsphinx_test.launch modificado con los diccionarios y vocabularios correspondientes
+
+5. iniciar proyecto.py
+
+las frases que reconoce son:
+
+ROBOT GO TO THE BEDROOM
+
+ROBOT GO TO THE GARDEN
+
+ROBOT GO TO THE KITCHEN
+
+ROBOT GO TO THE LIVINROOM
+
+ROBOT GO TO THE ENTRY
+
+
+direccion del vieo
+
+https://www.youtube.com/watch?v=cFGFYgHVTto&feature=youtu.be
+
