@@ -6,6 +6,7 @@ Para visualizar el video, favor de copiar y pegar el siguiente enlace en el nave
 https://drive.google.com/file/d/1_2C2Xx2lV04TQSkpgUSwNuNflXpNMeCa/view?usp=sharing
 
 Para ejecutar el programa es necesario tener instalado pocketsphinx, junto con tener descargados los archivos es-20k.lm.bin, es.dict y la carpeta es-es dentro del directorio /usr/local/lib/python2.7/dist-packages/pocketsphinx/model
+Estos archivos se descargan de: https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/Spanish/
 
 Se debe correr una simulación de Rviz para correr el programa junto con el servicio de navegación del modelo y el servicio de reproducción de voz.
 
