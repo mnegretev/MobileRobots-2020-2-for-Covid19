@@ -1,0 +1,18 @@
+Enlace para el video demostrativo:
+
+https://drive.google.com/file/d/17Do2oPwtM1Z90UtGrI1PPpIp1fyfP2cy/view?usp=sharing
+
+#Este proyecto se basó en el programa de speech_syn del repositorio original. Se puede correr el programa poniendo en la consola:
+-rosrun proyecto_final speech_test.py
+
+#Este codigo requiere tener instalado la voz voice_upc_ca_ona_hts y pocketsphinx para python
+
+#Requiere además descargar:
+
+-el diccionario es.dict
+
+-el modelo es-20k.lm.bin
+
+-la carpeta es-es
+
+Esto siguiendo las instrucciones de la siguiente página: https://blog.eonidi.com/index.php/2018/01/24/reconocimiento-de-voz-tiempo-real-en-idioma-espanol-con-pocketsphinx/
