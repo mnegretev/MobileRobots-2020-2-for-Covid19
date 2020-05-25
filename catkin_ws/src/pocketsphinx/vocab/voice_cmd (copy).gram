@@ -6,6 +6,6 @@
 
 grammar voice_cmd;
 
-public <move2> = VE A LA <direction>;
+public <move> = VE A LA <direction> ;
 
 <direction> = COCINA | PUERTA | BODEGA | SALA;
