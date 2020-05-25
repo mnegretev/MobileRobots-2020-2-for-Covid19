@@ -1,0 +1,21 @@
+1. Primero ejecutamos en una consola el siguiente comando:
+->roslaunch bring_up robotino_simul.launch
+
+2.-En otra consola ejecutamos el siguiente comando:
+->roslaunch bring_up navigation_move_base.launch
+
+3.-En otra consola ejecutamos el siguiente comando:
+->roslaunch bring_up pocketsphinx_test.launch
+
+4.-En otra consola ejecutamos el siguiente comando:
+->roslaunch bring_up speech_test.launch
+
+NOTAS:
+
+1.-Recuerda encender tu microfono para que se pueda realizar el reconocimiento de voz.
+
+2.-Una vez que el reconocimiento de voz se ha realizado correctamente y el robot comienza a moverse, se recomienda que apagues tu microfono o bajes el volumen de la salida de tus bocinas para evitar comandos de voz repetidos, ya que la sintesis de voz que realiza el robot al llegar al lugar indicado se escucha por las bocinas de la computadora y el robot entenderá nuevamente el comando anterior.
+
+3.-En la consola en la que se ejecuta el comando ->roslaunch bring_up pocketsphinx_test.launch podemos ver el reconocimiento de voz de los comandos que le decimos al robot.
+
+4.-En la consola en la que se ejecuta el comando -> roslaunch bring_up speech_test.launch podemos ver lo que dice el robot cuando llega al lugar indicado.

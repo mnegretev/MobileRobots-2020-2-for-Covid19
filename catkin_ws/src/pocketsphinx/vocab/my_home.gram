@@ -1,0 +1,7 @@
+#JSGF V1.0;
+
+grammar my_home;
+
+public <move> = JUSTINA <direction>;
+
+<direction> = KITCHEN | LIVINGROOM | GARDEN | BATHROOM;
