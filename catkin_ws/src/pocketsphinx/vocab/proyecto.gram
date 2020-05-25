@@ -1,0 +1,8 @@
+#JSGF V1.0;
+
+
+grammar proyecto;
+
+public <move> = GO TO THE KITCHEN | GO TO THE LIVING ROOM | STOP | HOW ARE YOU;
+
+
