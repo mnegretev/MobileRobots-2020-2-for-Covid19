@@ -1,0 +1,7 @@
+1.- En la terminal ejecutar el comando roslaunch bring_up proyecto_simul.launch
+2.-Una vez iniciado RVIZ hablar al robot de la siguiente forma:
+(esperar a que se ejecute una por una)
+ROBOTINO GO UNIVERSUM
+ROBOTINO GO TO POINT ONE
+ROBOTINO GO TO POINT THREE
+ROBOTINO GO TO POINT TWO
