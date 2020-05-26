@@ -1,7 +1,16 @@
+Nombre: Gutierrez Martinez Rodrigo
+
+
 1.- En la terminal ejecutar el comando roslaunch bring_up proyecto_simul.launch
-2.-Una vez iniciado RVIZ hablar al robot de la siguiente forma:
-(esperar a que se ejecute una por una)
+
+2.-Una vez iniciado RVIZ hablar al robot con cualquiera de las siguientes instrucciones:
 ROBOTINO GO UNIVERSUM
 ROBOTINO GO TO POINT ONE
 ROBOTINO GO TO POINT THREE
 ROBOTINO GO TO POINT TWO
+
+Notas: Cuando llega a un punto el robot por linea de comandos indica por voz a que punto se ha llegado a si que se debe esperar a que hable y se acomode en el punto destino para poder darle la siguiente instruccion.  
+
+
+
+info:Suscrito al topico de audio"jsgf_audio"
