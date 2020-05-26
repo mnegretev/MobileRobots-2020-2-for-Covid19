@@ -2,134 +2,127 @@
 
 import os
 
-import sys
+import rospy
 
-import rospy
-import rospy
-import tf
 
 
 import actionlib
-
-
+# Brings in the .action file and messages used by the move base action
+from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
 
 from std_msgs.msg import String
 from pocketsphinx.pocketsphinx import *
 from sphinxbase.sphinxbase import *
+
 from sound_play.msg import SoundRequest
-from std_msgs.msg import Float32MultiArray 
-import time 
-NAME = "gutierrez_martinez"
-#---
 
 class SaySomethingRobot(object):
 
     def __init__(self, text_to_say):
-        # rospy.init_node("speech_syn")
+       
         pub_speech = rospy.Publisher("robotsound", SoundRequest, queue_size=10)
         loop = rospy.Rate(2)
 
         msg_speech = SoundRequest()
-        # Indicamos que se va a reproducir un texto una sola vez
         msg_speech.sound   = -3
         msg_speech.command = 1
         msg_speech.volume  = 1.0
-        # Indicamos la voz
-        msg_speech.arg2    = "voice_kal_diphone"
-        #self.msg_speech.arg2    = "voice_en1_mbrola"
-        #self.msg_speech.arg2    = "voice_us1_mbrola"
+        # voz a manejar
+        msg_speech.arg2    = "voice_us1_mbrola"
 
-        # Indicamos el mensaje
+        #mensaje
         msg_speech.arg = text_to_say
 
         loop.sleep()
-        print "ROBOT: " + text_to_say
+        print "ROBOTINO DICE: " + text_to_say
         pub_speech.publish(msg_speech)
-#---
 
-def get_robot_pose(listener):
-    try:
-        (trans, rot) = listener.lookupTransform('odom', 'base_link', rospy.Time(0))
-        robot_x = trans[0]
-        robot_y = trans[1]
-        robot_a = 2*math.atan2(rot[2], rot[3])
-        if robot_a > math.pi:
-            robot_a -= 2*math.pi
-        return robot_x, robot_y, robot_a
-    except:
-        pass
-    return None
+class MoveToPoint(object):
 
-class Mover(object):
-    def __init__(self, point):
-      print "PROYECTO FINAL - " + NAME
-      rospy.init_node("")
-      pub_speeds = rospy.Publisher("/rotombot/hardware/motor_speeds", Float32MultiArray, queue_size=10)
-      loop = rospy.Rate(20)
-      listener = tf.TransformListener()
-      client.wait_for_server()
-      imDone = ""
-      while not rospy.is_shutdown():
-      
-      		if point == 0:  
-                      time.sleep(1)
-                      msg= Float32MultiArray()
-           	      msg.data=[0.6, 0.6]
-            	      pub_speeds.publish(msg)
-            	      time.sleep(3)
-            	      imDone = "Advance"
-            	      loop.sleep()
-      		if point == 1: 
-        #vuelta a la derecha
-	    	      msg.data=[0.8, -0.8]
-            	      pub_speeds.publish(msg)
-	              time.sleep(.50)
-                      imDone = "turn right"
-                      loop.sleep()
-      		if point == 2: 
-        #vuelta a la izquierda
-		     msg.data=[-0.8, 0.8]
-       		     pub_speeds.publish(msg)
-		     time.sleep(.50)
-         	     imDone = "turn left"
-         	     loop.sleep()
-       		if point == 3:
-        #detener
-	             msg.data=[0.0, 0.0]
-        	     pub_speeds.publish(msg)
-		     time.sleep(.5)
-         	     imDone = "Advance"
-         	     loop.sleep()
+    def __init__(self, val):
         
-        
+        client = actionlib.SimpleActionClient('move_base', MoveBaseAction)
+        client.wait_for_server()
+        imDone = ""
 
-#---
+        
+        goal = MoveBaseGoal()
+        goal.target_pose.header.frame_id = "map"
+        goal.target_pose.header.stamp = rospy.Time.now()
+
+        if val == 1: 
+            goal.target_pose.pose.position.x = 7.5
+            goal.target_pose.pose.position.y = 1.0
+            goal.target_pose.pose.orientation.x = 0.0
+            goal.target_pose.pose.orientation.y = 0.0
+            goal.target_pose.pose.orientation.z = 0.0
+            goal.target_pose.pose.orientation.w = 1.0
+            imDone = "I'M IN THE POINT ONE"
+        elif val == 2:
+            goal.target_pose.pose.position.x = 7.5
+            goal.target_pose.pose.position.y = 6.0
+            goal.target_pose.pose.orientation.x = 0.0
+            goal.target_pose.pose.orientation.y = 0.0
+            goal.target_pose.pose.orientation.z = 0.0
+            goal.target_pose.pose.orientation.w = 1.0
+            imDone = "I'M IN THE POINT TWO"
+        elif val == 3: 
+            goal.target_pose.pose.position.x = 3.0
+            goal.target_pose.pose.position.y = 4.0
+            goal.target_pose.pose.orientation.x = 0.0
+            goal.target_pose.pose.orientation.y = 0.0
+            goal.target_pose.pose.orientation.z = 0.0
+            goal.target_pose.pose.orientation.w = 1.0
+
+            imDone = "I'M IN THE POINT THREE"
+        elif val == 4: 
+            goal.target_pose.pose.position.x = 1.0
+            goal.target_pose.pose.position.y = 1.0
+            goal.target_pose.pose.orientation.x = 0.0
+            goal.target_pose.pose.orientation.y = 0.0
+            goal.target_pose.pose.orientation.z = 0.0
+            goal.target_pose.pose.orientation.w = 1.0
+            imDone = "I'M IN THE UNIVERSUM"
+
+        
+        client.send_goal(goal)
+
+        wait = client.wait_for_result()
+
+        if wait: 
+            rospy.loginfo(imDone)
+            SaySomethingRobot(imDone)
+
 class GetCommand(object):
     def __init__(self, command):
 
-     
-        print "COMANDO: " + command
+       
+        print "	COMANDO: " + command
 
       
-        if "ADVANCED" in command:
-                 SaySomethingRobot("ADVANCED")
-                 Mover(0)
-           
-        if "RIGHT" in command:
-               
-                SaySomethingRobot("TURN RIGHT")
-       
-                MoverPoint(1)
-        if "LEFT" in command:
-           
-                SaySomethingRobot("TURN LEFT")
-             
-                Mover(2)
-                
-        if "STOP" in command:
-                SaySomethingRobot("STOP PLEASE")
-                Mover(3)
+        if "GO" in command:
           
+            if "ONE" in command:
+                
+                SaySomethingRobot("GO TO POINT ONE")
+             
+                MoveToPoint(1)
+            elif "TWO" in command:
+               
+                SaySomethingRobot("GO TO POINT TWO")
+                
+                MoveToPoint(2)
+            elif "THREE" in command:
+               
+                SaySomethingRobot("GO TO POINT THREE")
+                
+                MoveToPoint(3)
+            elif "UNIVERSUM" in command:
+               
+                SaySomethingRobot("GO UNIVERSUM")
+               
+                MoveToPoint(4)
+            
 
 
 class ASRTest(object):
@@ -262,9 +255,9 @@ class ASRTest(object):
                     recognized = self.decoder.hyp().hypstr
                     rospy.loginfo('OUTPUT: \"' + recognized + '\"')
                     self.pub_.publish(recognized)
+                   
                     GetCommand(recognized)
                 self.decoder.start_utt()
-                 
 
     @staticmethod
     def shutdown():
@@ -276,3 +269,5 @@ class ASRTest(object):
 
 if __name__ == "__main__":
     ASRTest()
+
+
