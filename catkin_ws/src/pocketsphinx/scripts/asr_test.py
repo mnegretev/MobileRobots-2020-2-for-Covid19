@@ -59,8 +59,8 @@ class MoveToPoint(object):
             goal.target_pose.pose.orientation.w = 1.0
             imDone = "I'M IN THE POINT ONE"
         elif val == 2:
-            goal.target_pose.pose.position.x = 7.5
-            goal.target_pose.pose.position.y = 6.0
+            goal.target_pose.pose.position.x = 9.0
+            goal.target_pose.pose.position.y = 4.0
             goal.target_pose.pose.orientation.x = 0.0
             goal.target_pose.pose.orientation.y = 0.0
             goal.target_pose.pose.orientation.z = 0.0
@@ -76,7 +76,7 @@ class MoveToPoint(object):
 
             imDone = "I'M IN THE POINT THREE"
         elif val == 4: 
-            goal.target_pose.pose.position.x = 1.0
+            goal.target_pose.pose.position.x = 2.0
             goal.target_pose.pose.position.y = 1.0
             goal.target_pose.pose.orientation.x = 0.0
             goal.target_pose.pose.orientation.y = 0.0
