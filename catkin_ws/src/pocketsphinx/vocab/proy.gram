@@ -1,0 +1,8 @@
+#JSGF V1.0;
+
+grammar proy;
+
+public <command> = ROBOTINO (<go>);
+
+<go> = GO TO POINT (ONE | TWO | THREE | UNIVERSUM);
+
