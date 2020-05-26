@@ -14,13 +14,11 @@ Se deben de ejecutar los siguientes comandos:
 * rosrun bring_up sendgoal.py
 * rosrun bring_up speakgoal.py
 
-En el archivo pocketsphinx_test.launch se necesita editar la línea:
-* param name="hmm" value="/home/lui/Downloads/CIEMPIESS_Spanish_Models_581h/Models/581HCDCONT10000SPA"/
-reemplazando la ruta en value por la propia que corresponda a los modelos acústicos de [CIEMPIESS](https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/Mexican%20Spanish/) 
 
 La voz utilizada es instalada por el comando:
-* sudo apt-get install festvox-ellpc11k
-y debe de ser movida bajo el directorio de voces en inglés para que sea reconocida.
+'''sudo apt-get install festvox-ellpc11k ''' 
+y debe de ser movida bajo el directorio de voces en inglés para que sea reconocida, normalmente situado en:
+'''/usr/share/festival/voices/english/'''.
 
 
 
