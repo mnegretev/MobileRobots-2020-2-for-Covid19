@@ -4,7 +4,8 @@
 
 ## Ejecución:   
 Creé dos nodos para el manejo los tópicos de entrada y salida.
-Tales nodos fueron agregados al empaquetado .lauch de tal manera que solo se ejecute el comando roslauch.
+Tales nodos fueron agregados al empaquetado .lauch de tal manera que solo se ejecute el comando 
+* roslauch bring_up robotino_simul.launch
 
 ## Comandos
 Algunos de los comandos admitidos son:
