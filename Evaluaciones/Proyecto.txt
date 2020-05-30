@@ -1,0 +1,4 @@
+Calificación: 10
+El proyecto funciona de acuerdo con las especificaciones.
+Hay que poner en las instrucciones una nota sobre la voz que se debe tener
+instalada para que funcione el proyecto. 
