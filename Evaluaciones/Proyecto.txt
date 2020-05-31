@@ -1,0 +1,4 @@
+Calificación: 10
+El proyecto funciona de acuerdo con las especificaciones y las instrucciones
+fueron claras para la ejecución del proyecto.
+Muy bien.
