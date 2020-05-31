@@ -1,0 +1,4 @@
+Calificación: 10
+En las instrucciones faltó indicar que hay que marcar como ejecutable el script del proyecto.
+Era más fácil colocar una copia de los archivos en el lugar necesario en lugar de
+agregar indicaciones sobre cómo copiarlos. 
