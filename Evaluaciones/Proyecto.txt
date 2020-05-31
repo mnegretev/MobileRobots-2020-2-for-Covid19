@@ -1,0 +1,3 @@
+Calificación: 10
+El proyecto cumple con todas las especificaciones. Las instrucciones son sencillas.
+Muy bien.
