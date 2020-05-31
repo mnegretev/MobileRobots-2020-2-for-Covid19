@@ -1,0 +1,3 @@
+Calificación: 8
+El robot reconoce el comando de movimiento pero solo se queda oscilando frente a la puerta
+y nunca llega a su destino por lo que no se puede verificar la correcta síntesis de voz.
