@@ -1,0 +1,2 @@
+Calificación: 10
+El proyecto funciona correctamente y de acuerdo con las especificaciones.
