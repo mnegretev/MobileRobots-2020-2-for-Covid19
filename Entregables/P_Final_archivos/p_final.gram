@@ -1,0 +1,15 @@
+#JSGF V1.0;
+
+grammar p_final;
+
+public <command> = [<robot>] <action>;
+
+<robot> = ROBOT;
+
+<action> = (<move> | <speak>);
+
+<move> = (GO TO [THE] <place>);
+
+<place> = KITCHEN | BEDROOM | LIVING ROOM;
+
+<speak> = SAY HELLO | WHAT TIME IS IT;
