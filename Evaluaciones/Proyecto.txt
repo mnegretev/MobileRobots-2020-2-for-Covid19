@@ -1,0 +1,4 @@
+Calificación: 10
+El proyecto funciona de acuerdo con las especificaciones.
+Buena navegación.
+Está muy bien que se ejecute con un solo comando.
