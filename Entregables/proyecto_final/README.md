@@ -16,3 +16,6 @@ Algunos de los comandos admitidos son:
 * - Start 
 
 NOTA: El comando de start se implemento para diferenciar los comando de la síntesis de voz del robot)
+      Después de comunicarle un comando al robot, es necesario usar la instrucción start para que el robot
+      comience a moverse.
+      
