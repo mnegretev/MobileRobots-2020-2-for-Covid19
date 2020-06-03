@@ -111,8 +111,8 @@
   <joint name="depth_camera_joint" type="fixed">
     <parent link="base_link"/>
     <child link="camera_color_optical_frame"/>
-    <origin xyz="0 0 0.25" rpy="-1.8708 0 -1.5708"/>
-  </joint>
+    <origin xyz="0 0 0.25" rpy="-1.8708 0 -1.5708"/>	<!-- original <origin xyz="0 0 0.25" rpy="-1.8708 0 -1.5708"/> -->
+  </joint> 
 
   <link name="camera_depth_optical_frame"/>
   <joint name="depth_camera_joint2" type="fixed">
