@@ -1,0 +1,4 @@
+Calificación: 10
+Funciona de acuerdo con las especificaciones.
+Hace falta mejorar la sintonización de las constantes
+de la navegación. 

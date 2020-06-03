@@ -1,0 +1,3 @@
+Calificación: 10
+Se realizaron correctamente todas las actividades y se agregaron todos los entregables.
+Los archivos de audio muestran correctamente la síntesis de voz.

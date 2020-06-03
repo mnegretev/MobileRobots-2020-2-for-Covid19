@@ -1,0 +1,3 @@
+Calificación: 9
+Se agregaron al reporte los umbrales para la segmentación por color
+pero no hay nada sobre cómo se obtuvieron. 

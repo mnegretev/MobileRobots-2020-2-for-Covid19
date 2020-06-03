@@ -1,0 +1,2 @@
+Calificación: 10
+El programa describe correctamente el cuadrado.
