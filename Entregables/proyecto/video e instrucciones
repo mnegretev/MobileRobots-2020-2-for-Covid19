@@ -1,13 +1,17 @@
 
 1. iniciar nodo maestro
 
-2. iniciar roslaunch bring up robotino simul.launch con el mapa TMR_2019.yaml 
+2. depues poner source MobileRobots-2020-2-for-Covid19/catkin_ws/devel/setup.bash 
+   e iniciar roslaunch bring up robotino simul.launch con el mapa TMR_2019.yaml 
 
-3. iniciar roslaunch bring up navigation move base.launch
+3. poner source MobileRobots-2020-2-for-Covid19/catkin_ws/devel/setup.bash
+   iniciar roslaunch bring up navigation move base.launch
 
-4. iniciar roslaunch bring up pocketsphinx_test.launch modificado con los diccionarios y vocabularios correspondientes
+4. poner source MobileRobots-2020-2-for-Covid19/catkin_ws/devel/setup.bash
+   iniciar roslaunch bring up pocketsphinx_test.launch modificado con los diccionarios y vocabularios correspondientes
 
-5. iniciar proyecto.py con el coamndo rosrun proyecto proyecto.py
+5. poner source MobileRobots-2020-2-for-Covid19/catkin_ws/devel/setup.bash
+   iniciar proyecto.py con el coamndo rosrun proyecto proyecto.py
 
 las frases que reconoce son:
 
