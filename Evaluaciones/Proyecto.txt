@@ -1,0 +1,5 @@
+Calificación: 8
+El robot reconoce los comandos de voz y ejecuta el movimiento, sin embargo,
+no sintetiza voz cuando llega al punto meta.
+También falta sintonizar mejor las constantes de la navegación, pues el robot
+tiene muchas oscilaciones y tarda mucho en llegar al destino.
