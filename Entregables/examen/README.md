@@ -24,9 +24,12 @@ Dado un conjunto de obstáculos con forma poligonal en el plano euclidiano se
 dice que el grafo de visibilidad es aquel grafo en el cual cada nodo representa
 un vértice de los polígonos y las aristas son las conexiones visibles entre
 tales vértices. Esto quiere decir que para cada arista en el grafo de
-visibilidad definida por $v_{1}$ y $v_{2}$, el segmento de recta que conecta los
-vértices correspondientes en el plano no se interseca con ningún polígono
-(obstáculo).
+visibilidad definida por
+<img src="https://latex.codecogs.com/gif.latex?v_1" />
+y
+<img src="https://latex.codecogs.com/gif.latex?v_2" />,
+el segmento de recta que conecta los vértices correspondientes en el plano no se
+interseca con ningún polígono (obstáculo).
 
 <div align="center">
 
@@ -143,19 +146,46 @@ es una técnica usada por robots y vehículos autónomos para construir un mapa 
 un entorno desconocido en el que se encuentra, a la vez que estima su
 trayectoria al desplazarse dentro de este entorno.
 
-Given a series of controls u t {\displaystyle u_{t}} u_{t} and sensor observations o t {\displaystyle o_{t}} o_{t} over discrete time steps t {\displaystyle t} t, the SLAM problem is to compute an estimate of the agent's state x t {\displaystyle x_{t}} x_{t} and a map of the environment m t {\displaystyle m_{t}} m_{t}. All quantities are usually probabilistic, so the objective is to compute:
+Dada una serie de controladores
+<img src="https://latex.codecogs.com/gif.latex?u_t" />
+y sensores de observacion
+<img src="https://latex.codecogs.com/gif.latex?o_t" />
+sobre una serie de pasos en tiempo discreto
+<img src="https://latex.codecogs.com/gif.latex?t" />,
+SLAM calcula una estimación del estado del agente
+<img src="https://latex.codecogs.com/gif.latex?x_t" />
+(en este caso el robot) y un mapa del medio ambiente
+<img src="https://latex.codecogs.com/gif.latex?m_t" />.
 
-    P ( m t + 1 , x t + 1 | o 1 : t + 1 , u 1 : t ) {\displaystyle P(m_{t+1},x_{t+1}|o_{1:t+1},u_{1:t})} {\displaystyle P(m_{t+1},x_{t+1}|o_{1:t+1},u_{1:t})}
+Las mediciones son probabilísticas, así que el objetivo es calcular <img src="https://latex.codecogs.com/gif.latex?P(m_{t+1},x_{t+1}|o_{1:t+1},u_{1:t})" />
 
-Applying Bayes' rule gives a framework for sequentially updating the location posteriors, given a map and a transition function P ( x t | x t − 1 ) {\displaystyle P(x_{t}|x_{t-1})} P(x_{t}|x_{t-1}),
+Con lo anterior se busca calcular la trayectoria y el mapa.
 
-    P ( x t | o 1 : t , u 1 : t , m t ) = ∑ m t − 1 P ( o t | x t , m t , u 1 : t ) ∑ x t − 1 P ( x t | x t − 1 ) P ( x t − 1 | m t , o 1 : t − 1 , u 1 : t ) / Z {\displaystyle P(x_{t}|o_{1:t},u_{1:t},m_{t})=\sum _{m_{t-1}}P(o_{t}|x_{t},m_{t},u_{1:t})\sum _{x_{t-1}}P(x_{t}|x_{t-1})P(x_{t-1}|m_{t},o_{1:t-1},u_{1:t})/Z} {\displaystyle P(x_{t}|o_{1:t},u_{1:t},m_{t})=\sum _{m_{t-1}}P(o_{t}|x_{t},m_{t},u_{1:t})\sum _{x_{t-1}}P(x_{t}|x_{t-1})P(x_{t-1}|m_{t},o_{1:t-1},u_{1:t})/Z}
+Aplicando la regla de Bayes se genera una referencia para actualizar
+secuencialmente la siguiente posición del agente, dado un mapa y una función de
+transición <img src="https://latex.codecogs.com/gif.latex?P(x_{t}|x_{t-1})" />
 
-Similarly the map can be updated sequentially by
+<img src="https://latex.codecogs.com/gif.latex?P(x_{t}|o_{1:t},u_{1:t},m_{t})=\sum _{m_{t-1}}P(o_{t}|x_{t},m_{t},u_{1:t})\sum _{x_{t-1}}P(x_{t}|x_{t-1})P(x_{t-1}|m_{t},o_{1:t-1},u_{1:t})/Z" />.
 
-    P ( m t | x t , o 1 : t , u 1 : t ) = ∑ x t ∑ m t P ( m t | x t , m t − 1 , o t , u 1 : t ) P ( m t − 1 , x t | o 1 : t − 1 , m t − 1 , u 1 : t ) {\displaystyle P(m_{t}|x_{t},o_{1:t},u_{1:t})=\sum _{x_{t}}\sum _{m_{t}}P(m_{t}|x_{t},m_{t-1},o_{t},u_{1:t})P(m_{t-1},x_{t}|o_{1:t-1},m_{t-1},u_{1:t})} {\displaystyle P(m_{t}|x_{t},o_{1:t},u_{1:t})=\sum _{x_{t}}\sum _{m_{t}}P(m_{t}|x_{t},m_{t-1},o_{t},u_{1:t})P(m_{t-1},x_{t}|o_{1:t-1},m_{t-1},u_{1:t})}
+Como se dijo, con lo anterior podemos estimar la siguiente posición del agente.
 
-Like many inference problems, the solutions to inferring the two variables together can be found, to a local optimum solution, by alternating updates of the two beliefs in a form of EM algorithm.
+Se manera similar a lo anterior podemos calcular la siguiente iteración del
+mapa.
+
+<img src="https://latex.codecogs.com/gif.latex?P(m_{t}|x_{t},o_{1:t},u_{1:t})=\sum _{x_{t}}\sum _{m_{t}}P(m_{t}|x_{t},m_{t-1},o_{t},u_{1:t})P(m_{t-1},x_{t}|o_{1:t-1},m_{t-1},u_{1:t})" />
+
+Como muchos problemas de inferencia, las soluciones para inferir las dos
+variables juntas pueden ser encontradas en una solución óptima local, alternando
+las actualizaciones de las dos variables en una forma de algoritmo EM (algoritmo
+  esperanza-maximización).
+
+<div align="center">
+
+![PRM](./imgs/05_SLAM.gif)
+
+Animación de un agente aplicando SLAM a un entorno desconocido
+
+</div>
 
 ### 5. Explique en qué consiste la localización mediante filtros de partı́culas, sus ventajas sobre el Filtro de Kalman y los paquetes de ROS que lo implementan.
 
@@ -173,3 +203,12 @@ Like many inference problems, the solutions to inferring the two variables toget
 - [https://en.wikipedia.org/wiki/Probabilistic_roadmap](https://en.wikipedia.org/wiki/Probabilistic_roadmap)
 - [https://en.wikipedia.org/wiki/Rapidly-exploring_random_tree](https://en.wikipedia.org/wiki/Rapidly-exploring_random_tree)
 - [https://es.wikipedia.org/wiki/Localizaci%C3%B3n_y_modelado_simult%C3%A1neos](https://es.wikipedia.org/wiki/Localizaci%C3%B3n_y_modelado_simult%C3%A1neos)
+- [http://ais.informatik.uni-freiburg.de/teaching/ss12/robotics/slides/12-slam.pdf](http://ais.informatik.uni-freiburg.de/teaching/ss12/robotics/slides/12-slam.pdf)
+- [https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping#Mathematical_description_of_the_problem](https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping#Mathematical_description_of_the_problem)
+
+<!--
+<img src="https://latex.codecogs.com/gif.latex?" />
+- <img src="https://latex.codecogs.com/gif.latex?O_t=\text { Onset event at time bin } t " />
+- <img src="https://latex.codecogs.com/gif.latex?s=\text { sensor reading }  " />
+- <img src="https://latex.codecogs.com/gif.latex?P(s | O_t )=\text { Probability of a sensor reading value when sleep onset is observed at a time bin } t " />
+-->
