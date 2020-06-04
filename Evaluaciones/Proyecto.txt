@@ -1,0 +1,4 @@
+Calificación: 8
+En más de una ocasión el robot no llegó al punto meta, solo se quedó oscilando.
+En las ocasiones en que sí llegó al punto meta, no sintetizó voz para anunciar
+que había llegado.
