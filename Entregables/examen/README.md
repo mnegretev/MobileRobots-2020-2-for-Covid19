@@ -165,14 +165,14 @@ Aplicando la regla de Bayes se genera una referencia para actualizar
 secuencialmente la siguiente posición del agente, dado un mapa y una función de
 transición <img src="https://latex.codecogs.com/gif.latex?P(x_{t}|x_{t-1})" />
 
-<img src="https://latex.codecogs.com/gif.latex?P(x_{t}|o_{1:t},u_{1:t},m_{t})=\sum _{m_{t-1}}P(o_{t}|x_{t},m_{t},u_{1:t})\sum _{x_{t-1}}P(x_{t}|x_{t-1})P(x_{t-1}|m_{t},o_{1:t-1},u_{1:t})/Z" />.
+<img src="https://latex.codecogs.com/gif.latex?P(x_{t}|o_{1:t},u_{1:t},m_{t})=\sum_{m_{t-1}}P(o_{t}|x_{t},m_{t},u_{1:t})\sum_{x_{t-1}}P(x_{t}|x_{t-1})P(x_{t-1}|m_{t},o_{1:t-1},u_{1:t})/Z" />.
 
 Como se dijo, con lo anterior podemos estimar la siguiente posición del agente.
 
 Se manera similar a lo anterior podemos calcular la siguiente iteración del
 mapa.
 
-<img src="https://latex.codecogs.com/gif.latex?P(m_{t}|x_{t},o_{1:t},u_{1:t})=\sum _{x_{t}}\sum _{m_{t}}P(m_{t}|x_{t},m_{t-1},o_{t},u_{1:t})P(m_{t-1},x_{t}|o_{1:t-1},m_{t-1},u_{1:t})" />
+<img src="https://latex.codecogs.com/gif.latex?P(m_{t}|x_{t},o_{1:t},u_{1:t})=\sum_{x_{t}}\sum_{m_{t}}P(m_{t}|x_{t},m_{t-1},o_{t},u_{1:t})P(m_{t-1},x_{t}|o_{1:t-1},m_{t-1},u_{1:t})" />
 
 Como muchos problemas de inferencia, las soluciones para inferir las dos
 variables juntas pueden ser encontradas en una solución óptima local, alternando
