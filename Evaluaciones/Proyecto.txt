@@ -1,0 +1,4 @@
+Calificación: 10
+El robot realiza las acciones de acuerdo con las especificaciones.
+Falta mucho trabajo en la sintonización de las constantes de navegación
+porque el robot oscila mucho y tarda mucho en llegar al punto meta. 
