@@ -1,0 +1,5 @@
+Calificación: 9
+Uno de los ejemplos para la regla <wantCombo> es incorrecto:
+La frase 'I want cookies' no se podría reconocer puesto que se requieren
+dos comidas con la palabra 'and' en medio. 
+Se recomienda ampliamente tomar un curso de ortografía y redacción.
