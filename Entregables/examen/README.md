@@ -7,6 +7,11 @@
 
 Este documento fue escrito originalmente en `Markdown` y posteriormente exportado a un PDF, por lo cual, para una mejor lectura, revisar el documento original en [https://github.com/mnegretev/MobileRobots-2020-2-for-Covid19/blob/aguilar_enriquez/Entregables/examen/README.md](https://github.com/mnegretev/MobileRobots-2020-2-for-Covid19/blob/aguilar_enriquez/Entregables/examen/README.md).
 
+## Nota 2 al lector
+
+Por cierto, este texto contiene GIFs, ¿no quieres verlos todos feos en un PDF
+verdad?, para una mejor lectura, revisar el documento original en [https://github.com/mnegretev/MobileRobots-2020-2-for-Covid19/blob/aguilar_enriquez/Entregables/examen/README.md](https://github.com/mnegretev/MobileRobots-2020-2-for-Covid19/blob/aguilar_enriquez/Entregables/examen/README.md).
+
 ### 1. Explique qué es la configuración, espacio de configuraciones y grados de libertad de un robot móvil.
 
 ### 2. Investigue dos métodos basados en grafos para planeación de rutas.
