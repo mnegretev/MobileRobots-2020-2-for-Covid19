@@ -9,8 +9,9 @@ Este documento fue escrito originalmente en `Markdown` y posteriormente exportad
 
 ## Nota 2 al lector
 
-Por cierto, este texto contiene GIFs, ¿no quieres verlos todos feos en un PDF
-verdad?, para una mejor lectura, revisar el documento original en [https://github.com/mnegretev/MobileRobots-2020-2-for-Covid19/blob/aguilar_enriquez/Entregables/examen/README.md](https://github.com/mnegretev/MobileRobots-2020-2-for-Covid19/blob/aguilar_enriquez/Entregables/examen/README.md).
+Por cierto, este texto contiene algunas ecuaciones y GIFs que en el PDF no se
+logran apreciar correctamente, ¿no quieres verlo todo feo en un PDF verdad?,
+para una mejor lectura, revisar el documento original en [https://github.com/mnegretev/MobileRobots-2020-2-for-Covid19/blob/aguilar_enriquez/Entregables/examen/README.md](https://github.com/mnegretev/MobileRobots-2020-2-for-Covid19/blob/aguilar_enriquez/Entregables/examen/README.md).
 
 ## Preguntas
 ### 1. Explique qué es la configuración, espacio de configuraciones y grados de libertad de un robot móvil.
@@ -324,13 +325,9 @@ El campo de potencial diferencial se construye  sumando el campo de la meta
 <img src="https://latex.codecogs.com/gif.latex?U_g" />
 y el campo de los obstáculos
 <img src="https://latex.codecogs.com/gif.latex?U_o" />
-:
+: <img src="https://latex.codecogs.com/gif.latex?U(q)=U_g(q)+\sum{U_o(q)}" />
 
-<img src="https://latex.codecogs.com/gif.latex?U(q) = U_g(q) + \Sigma U_o(q)" />
-
-A partir e este campo se construye un campo de fuerzas artificial:
-
-<img src="https://latex.codecogs.com/gif.latex?F = - \nabla U(q)" />
+A partir e este campo se construye un campo de fuerzas artificial: <img src="https://latex.codecogs.com/gif.latex?F=-\nabla{U(q)}" />
 
 Una vez construido el campo de fuerzas, el robot se mueve en función de la
 fuerza local.
@@ -338,11 +335,9 @@ fuerza local.
 Para obtener las fuerzas hay que modelar las funciones de potencial de la
 meta y obstáculos (calculando el potencial para cada punto del espacio) libre:
 
-Meta (atractor parabólico):
-<img src="https://latex.codecogs.com/gif.latex?U_g(q) = k_1 dist(q, meta)^2" />
+- Meta (atractor parabólico): <img src="https://latex.codecogs.com/gif.latex?U_g(q)=k_1dist(q,meta)^2" />
 
-Obstáculo (barrera potencial exponencial) :
-<img src="https://latex.codecogs.com/gif.latex?Uo(q) = k_2 dist(q, obstaculo)^{-1}" />
+- Obstáculo (barrera potencial exponencial): <img src="https://latex.codecogs.com/gif.latex?Uo(q)=k_2dist(q,obstaculo)^{-1}" />
 
 Algunas ventajas de trabajar con campos potenciales es que las trayectorias que
 se general son suaves y se facilita el acoplar la parte de planeación con la de
