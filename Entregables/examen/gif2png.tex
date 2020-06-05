@@ -1,0 +1,8 @@
+% file: gif2png.tex
+% Herbert's code:
+% https://tex.stackexchange.com/questions/7602/how-to-add-a-gif-file-to-my-latex-file/7608#7608
+
+\usepackage{epstopdf}
+
+\epstopdfDeclareGraphicsRule{.gif}{png}{.png}{convert gif:#1 png:\OutputFile}
+\AppendGraphicsExtensions{.gif}
